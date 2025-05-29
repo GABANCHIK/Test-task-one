@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Recipe Search Next.js Application
+This is a Next.js app that allows users to search recipes by query, cuisine, and max preparation time using the Spoonacular API. It demonstrates a search page with filters and a recipes results page with server-side fetching.
 
-## Getting Started
+Features
+Search page with:
 
-First, run the development server:
+Text input for recipe query
 
-```bash
+Dropdown select for cuisine (Italian, Mexican, Chinese)
+
+Numeric input for max preparation time (minutes)
+
+"Next" button that enables only when at least one field is filled
+
+Recipes page:
+
+Fetches recipes on the server with given query parameters
+
+Displays recipe cards with image and title
+
+Responsive UI styled with Tailwind CSS
+
+Uses Next.js App Router with server components and client components
+
+Setup & Run
+1. Clone repository
+
+git clone <repo-url>
+cd <repo-folder>
+
+2. Install dependencies
+npm install
+# or
+yarn install
+
+3. Configure environment variables
+Create a .env.local file in the root and add:
+
+NEXT_PUBLIC_BASE_URL=https://api.spoonacular.com
+API_KEY=your_spoonacular_api_key_here
+You can get a free Spoonacular API key at https://spoonacular.com/food-api.
+
+4. Run development server
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open http://localhost:3000 in your browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Project Structure
+/app — Next.js App Router pages and components
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+/app/page.tsx — Search page (home)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+/app/recipes/page.tsx — Recipes page with server fetching
 
-## Learn More
+/app/components — UI components like Card and Header
 
-To learn more about Next.js, take a look at the following resources:
+/styles — Tailwind CSS configuration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Contact
+For any questions or feedback, contact [n.storchak06@gmail.com].
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
